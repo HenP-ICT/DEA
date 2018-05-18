@@ -5,12 +5,19 @@ export default class GlobalUi {
     }
 
     bindEvents() {
+        $(window).on('resize', () => this.toggleResponsiveMenu());
         $('.header__nav__item a').on('click touch', (e) => this.scrollToNavItem(e));
         $(document).on('scroll', () => this.updateHeader());
         $(document).on('scroll', () => this.updateNavHighlight()).trigger('scroll');
         $('#contact-form').on('submit', (e) => this.validateForm(e));
         $('.header__nav__button').on('click touch', () => this.toggleMenu());
         $('.header__logo').on('click touch', () => this.scrollToTop());
+    }
+
+    toggleResponsiveMenu() {
+        if($(window).innerWidth() > 1024) {
+            $('.header__nav').show();
+        }
     }
 
     toggleMenu() {
