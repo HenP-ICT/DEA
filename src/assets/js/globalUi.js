@@ -10,10 +10,18 @@ export default class GlobalUi {
         $(document).on('scroll', () => this.updateNavHighlight()).trigger('scroll');
         $('#contact-form').on('submit', (e) => this.validateForm(e));
         $('.header__nav__button').on('click touch', () => this.toggleMenu());
+        $('.header__logo').on('click touch', () => this.scrollToTop());
     }
 
     toggleMenu() {
         $('.header__nav').slideToggle();
+    }
+
+    scrollToTop() {
+
+        $('html').animate({
+            scrollTop: 0
+        }, 500);
     }
 
     scrollToNavItem(e) {
@@ -30,7 +38,7 @@ export default class GlobalUi {
     }
 
     isMobile() {
-        return window.innerWidth <= 700;
+        return window.innerWidth <= 1024;
     }
 
     updateNavHighlight() {
@@ -109,6 +117,10 @@ export default class GlobalUi {
 
         if(!this.verifySpamCheck(spamCheckVal)) {
             $('#contact-form input[name="spamCheck"]').addClass('error');
+            isValid = false;
+        }
+
+        if(!isValid) {
             return false;
         }
 
@@ -137,6 +149,7 @@ export default class GlobalUi {
         $('#contact-form').data('two', randomTwo);
 
         $('#contact-form input[name="result"]').val(randomOne + randomTwo);
+        // $('#contact-form input[name="spamCheck"]').val(randomOne + randomTwo);
         $('#contact-form input[name="spamCheck"]').attr('placeholder', `Spam check: ${randomOne} + ${randomTwo}`);
     }
 

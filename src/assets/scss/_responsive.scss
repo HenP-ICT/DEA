@@ -46,8 +46,8 @@
 
 @media screen and (max-width: 1024px) {
     header {
+        background: $light!important;
         overflow: unset;
-        background: white;
         height: 150px;
 
         .header__nav__button {
@@ -56,24 +56,28 @@
         }
 
         .header__nav{
+            background: $light;
             position: absolute;
-            top: 150px;
+            top: 150px!important;
             right: 0;
-            background: white;
             display: none;
+            height: 100vh;
+            width: 100vw;
         }
     
         .header__nav__item {
             width: 100%;
-            text-align: right;
+            text-align: center;
             padding: 20px 0;
-            border-bottom: 1px solid $border-color;
         }
 
         &.scroll {
+            .header__logo {
+                overflow: unset;
+            }
             height: 100px;
             .header__nav {
-                top: 100px;
+                top: 100px!important;
             }
         }
     }

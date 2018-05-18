@@ -10,7 +10,7 @@
         }
 
         //CHANGE HERE
-        $to =           'felix@canvasheroes.com';
+        $to =           'info@wisselwerkers,mc@henp.nl';
         $subject =      'Contact Request: ';
         $message =      'Contact request from</br>' .
                         '<b>Name: </b>' . $name . '</br>'  .
