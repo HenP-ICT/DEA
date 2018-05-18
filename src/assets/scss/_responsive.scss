@@ -1,0 +1,235 @@
+@media screen and (max-width: 1390px) { 
+    section, .inner, .title__section {
+        padding: 100px 30px;
+    }
+
+    .program__list__item {
+        .inner {
+            padding: 0 30px;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) { 
+    p, a {
+        font-size: 18px;
+        line-height: 30px;
+    }
+
+    h1 {
+        font-size: 5.4vw;
+        line-height: 5.4vw;
+    }
+
+    h2 {
+        font-size: 4.38vw;
+        line-height: 3.6vw;
+    }
+
+    h3 {
+        font-size: 2.3vw;
+        line-height: 2.5vw;
+    }
+
+    .header__nav {
+        float: right;
+    }
+
+    .header__nav__item a{
+        padding: 10px;
+    }
+
+    .header__nav__item{
+        float: right;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    header {
+        overflow: unset;
+        background: white;
+        height: 150px;
+
+        .header__nav__button {
+            display: block;
+            top: 20px;
+        }
+
+        .header__nav{
+            position: absolute;
+            top: 150px;
+            right: 0;
+            background: white;
+            display: none;
+        }
+    
+        .header__nav__item {
+            width: 100%;
+            text-align: right;
+            padding: 20px 0;
+            border-bottom: 1px solid $border-color;
+        }
+
+        &.scroll {
+            height: 100px;
+            .header__nav {
+                top: 100px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 900px) { 
+    p, a {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    .dark {
+        .inner {
+            padding: 0;
+        }
+    }
+
+    footer {
+        .inner {
+            padding: 0 30px;
+        }
+    }
+
+    .two-columns {
+        column-count: 1;
+    }
+
+    .small {
+        width: 100%;
+    }
+
+    .contact__section {
+        form {
+            width: 100%;
+        }
+    }
+
+    .program__section {
+        .program__list__item {
+            padding: 0;
+            text-align: center;
+            
+            h3 {
+                width: 100%;
+                text-align: center;
+                margin: 20px 0;
+            }
+
+            .button {
+                margin: 0 0 20px 0;
+            }
+        } 
+
+        .section__description {
+            margin-top: 400px;
+        }
+    }
+
+    .data__section {
+        .event__container {
+            float: unset;
+            width: 100%;
+        }
+
+        .section__description {
+            width: 100%;
+            float: unset;
+        }
+
+        .button {
+            float: unset;
+        }
+    }
+
+    .mentors__section .mentor__container {
+        width: 50%;
+        padding: 20px 10px;
+        margin-bottom: 0;
+        .mentor__info {
+            position: relative;
+            top: unset !important;
+            bottom: unset !important;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) { 
+    h1 {
+        font-size: 6.4vw;
+        line-height: 6.4vw;
+    }
+
+    h2 {
+        font-size: 5.38vw;
+        line-height: 4.6vw;
+    }
+
+    h3 {
+        font-size: 3.3vw;
+        line-height: 3.5vw;
+    }
+
+    .locations__section, .address__container {
+        .section__description {
+            width: 100%;
+            float: unset;
+        }
+
+        .button {
+            float: unset;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) { 
+    .button {
+        min-width: 290px;
+    }
+
+    .contact__section {
+        input {
+            width: 100%;
+        }
+    }
+
+    .mentors__section .mentor__container {
+        width: 100%;
+        padding: unset;
+    }
+}
+
+@media screen and (max-width: 400px) { 
+    h1 {
+        font-size: 9.4vw;
+        line-height: 9.4vw;
+    }
+
+    h2 {
+        font-size: 8.38vw;
+        line-height: 7.6vw;
+        text-align: left!important;
+    }
+
+    h3 {
+        font-size: 5vw;
+        line-height: 6vw;
+    }
+
+    h4 {
+        font-size: 20px;
+    }
+
+    .button {
+        min-width: unset;
+        max-width: unset;
+        width: 100%;
+    }
+}
+
