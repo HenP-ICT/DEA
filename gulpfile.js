@@ -73,6 +73,7 @@ gulp.task('watch', (done) => {
     gulp.watch(config.htmlSrc + '/**/*.html', gulp.series('copy-html'));
     gulp.watch(config.htmlSrc + '/**/*.php', gulp.series('copy-php'));
     gulp.watch(config.gfxsrc + '/**/*', gulp.series('copy-gfx'));
+    gulp.watch(config.docSrc + '/**/*', gulp.series('copy-doc'));
 
     done();
 });
