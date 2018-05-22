@@ -210,21 +210,25 @@
 
     <script>
             function initMap() {
-                var center = {lat: 52.103818, lng: 4.646418};
-              var uluru = {lat: 52.2969966, lng: 4.9045824};
-              var uluru1 = {lat: 51.8000892, lng: 4.3712459};
-              var map = new google.maps.Map(document.getElementById('map'), {
-                zoom: 9,
-                center: center
-              });
-              var marker = new google.maps.Marker({
-                position: uluru,
-                map: map
-              });
-              var marker = new google.maps.Marker({
-                position: uluru1,
-                map: map
-              });
+
+                var center = {lat: 51.870281, lng: 4.445028};
+                var addressOne = {lat: 51.7982554, lng: 4.4884761};
+                var addressTwo = {lat: 51.8000892, lng: 4.3712459};
+
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    zoom: 11,
+                    center: center
+                });
+
+                var marker = new google.maps.Marker({
+                    position: addressOne,
+                    map: map
+                });
+
+                var marker = new google.maps.Marker({
+                    position: addressTwo,
+                    map: map
+                });
             }
           </script>
           <script async defer
