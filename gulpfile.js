@@ -22,7 +22,9 @@ const config = {
     htmlSrc: './src',
     htmlDist: './public',
     gfxSrc: './src/assets/gfx',
-    gfxDist: './public/assets/'
+    gfxDist: './public/assets/',
+    docSrc: './src/assets/doc',
+    docDist: './public/assets/'
 };
 
 const bundler = browserify({
@@ -50,12 +52,12 @@ const errorHandler = function() {
 
 const distTask = () => {
     return gulp.series(
-        'clean', 'compile-css', 'compile-js', 'copy-js', 'copy-html'
+        'clean', 'compile-css', 'compile-js', 'copy-js', 'copy-html', 'copy-gfx', 'copy-doc'
     )();
 };
 
 const serverTask = () => {
-    return gulp.series('checkinstall', 'watch', 'compile-css', 'compile-js', 'copy-js', 'copy-html', 'copy-php', 'copy-gfx', 'browser-sync')();
+    return gulp.series('checkinstall', 'watch', 'compile-css', 'compile-js', 'copy-js', 'copy-html', 'copy-php', 'copy-gfx', 'copy-doc', 'browser-sync')();
 };
 
 gulp.task('browser-sync', () => {
@@ -91,6 +93,13 @@ gulp.task('copy-gfx', () => {
     return gulp.src(config.gfxSrc + '**/*')
         .pipe($.plumber(errorHandler))
         .pipe(gulp.dest(config.gfxDist))
+        .pipe(browserSync.stream());
+});
+
+gulp.task('copy-doc', () => {
+    return gulp.src(config.docSrc + '**/*')
+        .pipe($.plumber(errorHandler))
+        .pipe(gulp.dest(config.docDist))
         .pipe(browserSync.stream());
 });
 
