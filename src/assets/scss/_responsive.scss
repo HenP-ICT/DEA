@@ -49,7 +49,7 @@
 @media screen and (max-width: 1024px) {
     header {
         background: $light!important;
-        overflow: unset;
+        overflow: none;
         height: 150px;
 
         .header__nav__button {
@@ -74,7 +74,7 @@
 
         &.scroll {
             .header__logo {
-                overflow: unset;
+                overflow: none;
             }
             height: 100px;
             .header__nav {
@@ -143,17 +143,17 @@
 
     .data__section {
         .event__container {
-            float: unset;
+            float: none;
             width: 100%;
         }
 
         .section__description {
             width: 100%;
-            float: unset;
+            float: none;
         }
 
         .button {
-            float: unset;
+            float: none;
         }
     }
 
@@ -163,8 +163,8 @@
         margin-bottom: 0;
         .mentor__info {
             position: relative;
-            top: unset !important;
-            bottom: unset !important;
+            top: none !important;
+            bottom: none !important;
         }
     }
 }
@@ -188,11 +188,11 @@
     .locations__section, .address__container {
         .section__description {
             width: 100%;
-            float: unset;
+            float: none;
         }
 
         .button {
-            float: unset;
+            float: none;
         }
     }
 }
@@ -210,11 +210,11 @@
 
     .mentors__section .mentors .mentor__container {
         width: 100%;
-        padding: unset;
+        padding: none;
 
         .mentor__info {
             margin-top: 20px;
-            min-height: unset;
+            min-height: none;
         }
     }
 }
@@ -241,8 +241,8 @@
     }
 
     .button {
-        min-width: unset;
-        max-width: unset;
+        min-width: none;
+        max-width: none;
         width: 100%;
     }
 }

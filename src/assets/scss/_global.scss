@@ -4,6 +4,10 @@
     -webkit-font-smoothing: antialiased;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 h1, h2 {
     text-transform: uppercase;
     font-family: $title-font;
@@ -171,7 +175,7 @@ section {
 }
 
 .title__section {
-    max-width: unset;
+    max-width: none;
     height: 100vh;
     text-align: center;
     display: flex;
@@ -187,7 +191,7 @@ section {
 }
 
 .program__section {
-    position: unset;
+    position: none;
     .program__list {
         position: absolute;
         width: 100%;
@@ -299,7 +303,7 @@ section {
             &:nth-child(odd) {
 
                 .mentor__info {
-                    top: unset;
+                    top: none;
                     bottom: 0;
                 }
             }
@@ -333,14 +337,14 @@ section {
 }
 
 .investment__section {
-    max-width: unset;
+    max-width: none;
     width: 100%;
 }
 
 .locations__section {
-    max-width: unset;
+    max-width: none;
     width: 100%;
-    padding: unset;
+    padding: none;
     clear: both;
 
     h2 {
@@ -390,7 +394,7 @@ section {
     input, textarea { 
         display: inline-block;
         width: calc(50% - 15px);
-        min-width: unset;
+        min-width: none;
         padding: 12px 30px;
         text-transform: uppercase;
         margin-right: 10px;

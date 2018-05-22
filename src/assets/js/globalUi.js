@@ -1,3 +1,5 @@
+import "babel-polyfill";
+
 export default class GlobalUi {
     constructor() {
         this.bindEvents();
@@ -15,14 +17,6 @@ export default class GlobalUi {
     }
 
     getDistanceToTop() {
-        // let dist = 0;
-
-        // dist = $('body').scrollTop();
-
-        // if(dist == 0) {
-        //     dist = $('html').scrollTop();
-        // }
-
         return window.pageYOffset;
     }
 
