@@ -32,7 +32,9 @@
     }
 
     .header__nav {
-        float: right;
+        .header__nav__item {
+            padding: 20px 0;
+        }
     }
 
     .header__nav__item a{
@@ -68,7 +70,6 @@
         .header__nav__item {
             width: 100%;
             text-align: center;
-            padding: 20px 0;
         }
 
         &.scroll {
@@ -119,15 +120,19 @@
         .program__list__item {
             padding: 0;
             text-align: center;
+            float: none;
             
             h3 {
                 width: 100%;
                 text-align: center;
                 margin: 20px 0;
+                float: none;
+                display: inline-block;
             }
 
             .button {
                 margin: 0 0 20px 0;
+                float: none;
             }
         } 
 
@@ -152,7 +157,7 @@
         }
     }
 
-    .mentors__section .mentor__container {
+    .mentors__section .mentors .mentor__container {
         width: 50%;
         padding: 20px 10px;
         margin-bottom: 0;
@@ -203,9 +208,14 @@
         }
     }
 
-    .mentors__section .mentor__container {
+    .mentors__section .mentors .mentor__container {
         width: 100%;
         padding: unset;
+
+        .mentor__info {
+            margin-top: 20px;
+            min-height: unset;
+        }
     }
 }
 

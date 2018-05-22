@@ -14,6 +14,18 @@ export default class GlobalUi {
         $('.header__logo').on('click touch', () => this.scrollToTop());
     }
 
+    getDistanceToTop() {
+        // let dist = 0;
+
+        // dist = $('body').scrollTop();
+
+        // if(dist == 0) {
+        //     dist = $('html').scrollTop();
+        // }
+
+        return window.pageYOffset;
+    }
+
     toggleResponsiveMenu() {
         if($(window).innerWidth() > 1024) {
             $('.header__nav').show();
@@ -51,14 +63,14 @@ export default class GlobalUi {
     updateNavHighlight() {
         let dist = 9999999999;
         let navItems = $('.header__nav__item');
-        let scrollPosition = $('html').scrollTop();
+        let scrollPosition = this.getDistanceToTop();
         let sections = $('main > section');
         let activeSection = null;
 
         navItems.removeClass('header__nav__item--active');
 
         for(let section of sections) {
-            let sectionToTop = $(section).offset().top;
+            let sectionToTop = section.offsetTop;
             let dif = Math.abs(sectionToTop - scrollPosition);
 
             if(dif < dist) {
@@ -73,7 +85,7 @@ export default class GlobalUi {
 
     updateHeader() {
         let scrollSwitchPoint = 400;
-        let distToTop = document.documentElement.scrollTop;
+        let distToTop = this.getDistanceToTop();
         let percentage = Math.floor(100 / scrollSwitchPoint * distToTop);
 
         if(percentage > 100) {
@@ -89,11 +101,15 @@ export default class GlobalUi {
             headerNavTop = 100;
         }
 
+        if(distToTop <= 0 && headerNavTop < 100) {
+            headerNavTop = 100;
+        }
+
         let headerHeight = adjustedPercentage * 100;
         if(headerHeight > 150) {
             headerHeight = 150;
         }
-
+        
         $('header').css('background-color', `rgba(255,255,255, ${percentage}) `);
         $('.header__nav').css('top', headerNavTop);
         $('header').css('height', headerHeight);
@@ -134,11 +150,12 @@ export default class GlobalUi {
         let organisation = data[0].value;
         let name = data[1].value;
         let email = data[2].value;
+        let question = data[5].value;
 
         $.ajax({
             method: "POST",
             url: '/form.php',
-            data: {organisation, name, email},
+            data: {organisation, name, email, question},
             success: (result) => {
                 if(result == 'true') {
                     $('#contact-form').slideUp(200);
