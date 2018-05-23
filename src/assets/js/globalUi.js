@@ -31,7 +31,6 @@ export default class GlobalUi {
     }
 
     scrollToTop() {
-
         $('html').animate({
             scrollTop: 0
         }, 500);
@@ -41,12 +40,15 @@ export default class GlobalUi {
         let target = $(e.target);
         let targetSectionName = target.attr('data-targetsection');
 
+        let targetSection = $('main').find(`[data-sectionName='${targetSectionName}']`);
+        let targetFromTop = $(targetSection).offset().top - 120;
+
         if(this.isMobile()) {
             this.toggleMenu();
         }
-
-        $('html').animate({
-            scrollTop: $('main').find(`[data-sectionName='${targetSectionName}']`).offset().top - 120
+        
+        $('body, html').animate({
+            scrollTop: targetFromTop
         }, 500);
     }
 
