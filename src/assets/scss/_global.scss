@@ -175,14 +175,16 @@ section {
     height: 100vh;
     text-align: center;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     padding: 100px 0;
     background: url('../gfx/background.png') no-repeat center center;
     background-size: cover;
-
+    flex-direction: column;
+    justify-content: flex-end;
     h1 {
-        width: 1200px;
-        margin: 0 auto;
+        // width: 1200px;
+        // margin: 0 auto;
+        margin-bottom: 20px;
     }
 }
 
@@ -416,8 +418,15 @@ footer {
     p {
         margin-bottom: 20px;
     }
-
     .copyright {
         margin-top: 100px;
+    }
+}
+
+.video__container {
+    width: 100%;
+    height: 100vh;
+    .player .vp-video-wrapper video {
+        object-fit: cover;
     }
 }
